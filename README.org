@@ -1,0 +1,47 @@
+* dm-gptel-simple-org-memory
+
+** What is it?
+
+- A low effort approach to make your org-notes available to LLMs via [[https://github.com/karthink/gptel][gptel]].
+- The functionality is available as an MCP tool, =search_org_memory=.
+- [[https://github.com/ggreer/the_silver_searcher][Silver searcher (ag)]] is used to look relevant content up in the filesystem.
+
+
+** Installation
+
+- Install =ag=
+- Fetch dm-gptel-simple-org-memory.el and =(require 'dm-gptel-simple-org-memory)=.
+
+ Alternatively, using =straight.el=:
+
+
+#+begin_src elisp
+  (use-package dm-gptel-simple-org-memory
+    :straight (:repo "dmitrym0/dm-gptel-simple-org-memory")
+    :host github
+    :type git))
+#+end_src
+
+
+
+
+** Usage
+
+1. Enable the tool in =M-x gptel-tools=
+2. Start a regular gptel session.
+
+
+** Sample interaction
+#+begin_quote
+### tell me about simple-org-memory
+
+I'll search for information about "simple-org-memory" in your org notes. Let me search more broadly for related terms to get more context:Based on the search results, I can see that "simple-org-memory" appears to be referenced as "dm-gptel-simple-org-memory" in your notes, but the available context is quite limited. From what I can gather:
+
+**From your org notes:**
+- There's a heading `* dm-gptel-simple-org-memory` in your daily note from 2025-10-18
+- It appears to be related to `gptel` (which is an Emacs package for interacting with language models)
+- There are references to functions like `dm/gptel-org-search-parallel` and `dm/format-search-results-json`
+- It seems to be part of a system that can search through org files and format results
+
+
+#+end_quote
